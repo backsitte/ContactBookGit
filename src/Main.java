@@ -43,6 +43,9 @@ public class Main {
                 case GET_PHONE:
                     getPhone(in,cBook);
                     break;
+                case GET_NAME:
+                    getName(in, cBook);
+                    break;
                 case GET_EMAIL:
                     getEmail(in,cBook);
                     break;
@@ -104,6 +107,14 @@ public class Main {
             System.out.println(cBook.getPhone(name));
         }
         else System.out.println(NAME_NOT_EXIST);
+    }
+
+    private static void getName(Scanner in, ContactBook cBook){
+        String phoneNumber;
+        phoneNumber = in.next();
+        if(cBook.hasContact(phoneNumber)){
+            System.out.println(cBook.getName(phoneNumber));
+        }
     }
 
     private static void getEmail(Scanner in, ContactBook cBook) {

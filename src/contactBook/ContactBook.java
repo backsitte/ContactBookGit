@@ -45,6 +45,8 @@ public class ContactBook {
         return contacts[searchIndex(name)].getPhone();
     }
 
+    public String getName(){}
+
     //Pre: name != null && hasContact(name)
     public String getEmail(String name) {
         return contacts[searchIndex(name)].getEmail();

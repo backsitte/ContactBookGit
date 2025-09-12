@@ -106,7 +106,8 @@ public class ContactBook {
 
     //Method that checks if two contacts have the same phone number
     public boolean hasRepeatedContacts(){
-        //Compare two contacts.getPhone(). Return true if they're equal
+        //Compare two contacts.getPhone().
+        // Return true if they're equal
         return false;
     }
 

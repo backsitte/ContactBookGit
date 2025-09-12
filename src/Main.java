@@ -28,7 +28,7 @@ public class Main {
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String SHARED_NUMBERS = "There are contacts that share phone numbers.";
-    public static final String NO_SHARED_NUMBERS = "All contacts have different phone numbers";
+    public static final String NO_SHARED_NUMBERS = "All contacts have different phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -60,6 +60,9 @@ public class Main {
                     break;
                 case GET_BY_NUMBER:
                     getNameByPhone(in, cBook);
+                    break;
+                case EQUAL_PHONES:
+                    checkEqualPhones(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -162,6 +165,13 @@ public class Main {
             System.out.println(cBook.getName(Integer.parseInt(phoneNumber)));
         }
         else System.out.println(PHONE_NUMBER_NOT_EXIST);
+    }
+
+    private static void checkEqualPhones(ContactBook cBook){
+        if(cBook.hasRepeatedContacts()){
+            System.out.println(SHARED_NUMBERS);
+        }
+        else System.out.println(NO_SHARED_NUMBERS);
     }
 
 }

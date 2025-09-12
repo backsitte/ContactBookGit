@@ -104,4 +104,9 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    public boolean hasRepeatedContacts(){
+
+        return false;
+    }
+
 }

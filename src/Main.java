@@ -114,9 +114,9 @@ public class Main {
     }
 
     private static void getName(Scanner in, ContactBook cBook){
-        String phoneNumber;
+        int phoneNumber;
         phoneNumber = in.next();
-        if(cBook.hasContact(phoneNumber)){
+        if(cBook.hasContact()){
             System.out.println(cBook.getName(phoneNumber));
         }
     }

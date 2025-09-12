@@ -47,9 +47,6 @@ public class Main {
                 case GET_PHONE:
                     getPhone(in,cBook);
                     break;
-                case GET_NAME:
-                    getName(in, cBook);
-                    break;
                 case GET_EMAIL:
                     getEmail(in,cBook);
                     break;
@@ -61,6 +58,12 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
+                    break;
+                case EQUAL_PHONES:
+                    equalPhones();
+                    break;
+                case GET_NAME:
+                    getNameByNumber(in, cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -113,14 +116,6 @@ public class Main {
         else System.out.println(NAME_NOT_EXIST);
     }
 
-    private static void getName(Scanner in, ContactBook cBook){
-        String phoneNumber;
-        phoneNumber = in.next();
-        if(cBook.hasContact(phoneNumber)){
-            System.out.println(cBook.getName(phoneNumber));
-        }
-    }
-
     private static void getEmail(Scanner in, ContactBook cBook) {
         String name;
         name = in.nextLine();
@@ -163,5 +158,16 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+    private static void equalPhones() {
+
+    }
+
+    private static void getNameByNumber(Scanner in, ContactBook cBook){
+        String phoneNumber;
+        phoneNumber = in.next();
+        if(cBook.hasContact(phoneNumber)){
+            System.out.println(cBook.getName(Integer.parseInt(phoneNumber)));
+        }
     }
 }

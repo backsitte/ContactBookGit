@@ -45,7 +45,16 @@ public class ContactBook {
         return contacts[searchIndex(name)].getPhone();
     }
 
-    public String getName(int phonenumber){ return contacts[phonenumber].getName(); }
+    public String getName(int phonenumber){
+        initializeIterator();
+        while (hasNext()){
+            Contact newContact = next();
+            if(newContact.getPhone() == phonenumber) {
+                return newContact.getName();
+            }
+        }
+        return null;
+    }
 
     //Pre: name != null && hasContact(name)
     public String getEmail(String name) {
@@ -93,6 +102,13 @@ public class ContactBook {
     //Pre: hasNext()
     public Contact next() {
         return contacts[currentContact++];
+    }
+
+    //Method that checks if two contacts have the same phone number
+    public boolean hasRepeatedContacts(){
+        //Compare two contacts.getPhone().
+        // Return true if they're equal
+        return false;
     }
 
 }
